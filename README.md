@@ -4,4 +4,10 @@ Jogo de memória estilo Genius
 - HTML
 - CSS
 - Javascript
+
+&nbsp;
+
+[Aulas de Gabriela Spruce](https://github.com/SpruceGabriela/genesis-dio)
+
+&nbsp;
 :wink: # Let's code ! :computer: 
