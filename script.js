@@ -30,7 +30,7 @@ let lightColor = (element, number) => {
     setTimeout(() => {
         element.classList.add('selected');
 
-    }, number - 200);
+    }, number - 300);
     setTimeout(() =>{
         element.classList.remove('selected');
     });
