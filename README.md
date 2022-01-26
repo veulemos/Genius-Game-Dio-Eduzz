@@ -7,7 +7,7 @@ Jogo de memória estilo Genius
 
 &nbsp;
 
-[Aulas de Gabriela Spruce](https://github.com/SpruceGabriela/genesis-dio)
+[Aulas de Gabriela Pinheiro](https://github.com/SpruceGabriela/genesis-dio)
 
 &nbsp;
 :wink: # Let's code ! :computer: 
