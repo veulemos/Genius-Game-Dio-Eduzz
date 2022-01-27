@@ -5,9 +5,6 @@ Jogo de memória estilo Genius
 - CSS
 - Javascript
 
-&nbsp;
-
-[Aulas de Gabriela Pinheiro](https://github.com/SpruceGabriela/genesis-dio)
 
 &nbsp;
 :wink: # Let's code ! :computer: 
