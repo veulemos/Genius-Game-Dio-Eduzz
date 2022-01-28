@@ -1,53 +1,251 @@
-body {
-    margin: 0;
-    background-color: rgba(208,235, 239);
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+:root {
+    --clr-light-green:    #13ff7c;
+	--clr-light-red:      #ff4c4c;
+	--clr-light-yellow:   #fed93f;
+	--clr-light-blue:     #1c8cff;
+
+    --clr-border:		  #333333;
+    --clr-center:  		  #ECE7EE;
+
+	--clr-counter-bg:	  #32050C;
+	--clr-counter-off:	  #430710;
+	--clr-counter-on:	  #DC0D29;
+	
+	--clr-switch: 	      #3193DE;
+
+    --game-size: 48rem;
+	--game-border: 1.5rem solid var(--clr-border);
+}
+html {
+    font-size: 62.5%;
+}
+body {
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png');
+    font-family: "Bungee", verdana, sans-serif;
+}
+
 .main-game {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: var(--game-size);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .genius {
     display: grid;
     grid-template-areas: 'verde vermelho'
     'amarelo azul';
-    grid-gap: 10px;
+    grid-gap: 3px;
     border: 1px solid #fff;
     background-color: #fff;
     border-radius: 100%;
-    width: 700px;
-    height:700px;
-    
-    
+    width: var(--game-size);
+    height: var(--game-size);
+    margin-top: 5rem;
+    position: relative;
 }
 
-.blue {
+.game_title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding-left: 1.2rem;
+    padding-top: 4.7rem;
+}
+
+.reg {
+    font-family: verdana, sans-serif;
+    font-size: 1.8rem;
+    margin-left: 0.2rem;
+    vertical-align: top;
+}
+
+.game__pad--blue {
     grid-area: azul;
     background-color: blue;
     border-bottom-right-radius: 100%;
+    border: var(--game-border);
 }
 
-.red {
+.game__pad--red {
     grid-area: vermelho;
-    background-color:red;
+    background-color: red;
     border-top-right-radius: 100%;
+    border: var(--game-border);
 }
 
-.yellow {
+.game__pad--yellow {
     grid-area: amarelo;
     background-color: yellow;
     border-bottom-left-radius: 100%;
+    border: var(--game-border);
 }
 
-.green {
+.game__pad--green {
     grid-area: verde;
     background-color: green;
     border-top-left-radius: 100%;
+    border: var(--game-border);
 }
 
-.selected {
-    opacity: 0.4;
+/*Fazer brilhar*/
+.game__pad--green.game__pad--active {
+    background-color: var(--clr-light-green);
+}
+
+.game__pad--red.game__pad--active {
+    background-color: var(--clr-light-red);
+}
+
+.game__pad--yellow.game__pad--active {
+    background-color: var(--clr-light-yellow);
+}
+
+.game__pad--blue.game__pad--active {
+    background-color: var(--clr-light-blue);
+}
+
+/* alterar o cursor do mouse*/
+.game__pad--btn {
+    cursor: pointer;
+}
+
+/*Parte central*/
+.game_options {
+    position: absolute;
+    background-color: var(--clr-center);
+
+    width: calc(var(--game-size)/2);
+    height: calc(var(--game-size)/2);
+
+    top: calc(var(--game-size)/4);
+    left: calc(var(--game-size)/4);
+
+    border: var(--game-border);
+    border-radius: 25rem;
+}
+
+.gui {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.group {
+    margin-right: 2.2rem;
+}
+
+.group-large {
+    display: flex;
+    width:10rem;
+    margin-left: 4.5rem;
+}
+
+.gui__label {
+    font-family: "Arima Madurai", cursive;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.gui__label--switch {
+    margin: 0;
+    padding-top: 0.75rem;
+}
+
+.gui__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: .2rem;
+    border-radius: 5rem;
+    box-shadow: 0 .2rem .3rem #222;
+    border: .4rem solid #444;
+    cursor: pointer;
+}
+
+/*Efeito de movimento do botao clicando*/
+.gui__btn:active {
+    transform: translate(0, .3rem);
+    box-shadow: none;
+}
+
+.gui__btn--start {
+    background-color: red;
+}
+
+.gui__btn--strict {
+    background-color: yellow;
+}
+
+.gui__led {
+    background-color: #32050c;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+    width: .8rem;
+    height: .8rem;
+    border: .2rem solid #222;
+    border-radius: 2rem;
+}
+
+.gui__led--active {
+    background-color: red;
+}
+
+.gui__btn-switch {
+    background-color: #222;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    width: 5rem;
+    height: 2.3rem;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+/*criar um quadrado para ter o efeito ligando e desligando*/
+.gui__btn-switch::before {
+    content: "";
+    background-color:var(--clr-switch);
+    display: block;
+    position: relative;
+    left: 2.5rem;
+    width: 2.2rem;
+    height: 1.9rem;
+    border-radius: .3rem;
+    border: .2rem solid #333;
+}
+
+/*O movimento do botao on off. Essa classe vai ser movimentada no js*/
+.gui__btn-switch--on::before {
+    left: 0;
+}
+
+.gui__counter {
+
+    background-color: var(--clr-counter-bg);
+    color: var(--clr-counter-off);
+    font-family: "Iceland", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: right;
+    width: 5.5rem;
+    border: .3rem solid #000;
+    border-radius: 1rem;
+    padding-right: .2rem;
+    padding-left: .3rem;
+}
+
+.gui__counter--on {
+    color: var(--clr-counter-on);
+}
+
+footer {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 1rem;
 }

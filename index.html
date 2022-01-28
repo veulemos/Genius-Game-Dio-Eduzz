@@ -5,17 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Genius Game</title>
+    <title>Projeto Genius Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200&amp;family=Bungee&amp;family=Iceland&amp;display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="main-game">
         <div class="genius">
-            <div class="blue"></div>
-            <div class="yellow"></div>
-            <div class="red"></div>
-            <div class="green"></div>
-        </div>
-    </div>
+            <div class="game__pad game__pad--blue"></div>
+            <div class="game__pad game__pad--yellow"></div>
+            <div class="game__pad game__pad--red"></div>
+            <div class="game__pad game__pad--green"></div>
+
+            <div class="game_options">
+                <h1 class="game_title">Genius<span class="reg">®</span></h1>
+
+                <div class="gui">
+                    <div class="group">
+                        <div class="gui__counter">--</div><!-- display score-->
+                        <p class="gui__label">count</p>
+                    </div><!-- .group agrupar os botoes-->
+
+                    <div class="group">
+                        <div class="gui__btn gui__btn--start"></div><!-- cor do botao start -->
+                        <p class="gui__label">start</p>
+                    </div><!-- .group -->
+
+                    <div class="group">
+                       <div class="gui__led"></div>
+                       <div class="gui__btn gui__btn--strict"></div><!-- cor do botao stRICT -->
+                       <p class="gui__label">strict</p>
+                   </div><!-- .group -->
+
+                   <div class="group group-large">
+                       <p class="gui__label gui__label--switch">ON</p>
+                       <div class="gui__btn-switch"></div>
+                       <p class="gui__label gui__label--switch">OFF</p>
+                   </div><!-- .group -->
+
+                </div><!-- .gui onde estarao os botoes-->
+
+            </div><!-- .game_options -->
+
+        </div><!-- .genius -->
+        <footer>@Veronica_Lemos - 2022</footer>
+    </div><!-- .main-game -->
 
     <script type="text/javascript" src="script.js"></script>
     
